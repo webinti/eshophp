@@ -51,3 +51,7 @@ function abort_404() {
 function is_on_page($page) {
     return $_SERVER['SCRIPT_NAME'] === $page;
 }
+
+function is_on_directory($directory) {
+    return strpos($_SERVER['SCRIPT_NAME'], $directory) === 0;
+}

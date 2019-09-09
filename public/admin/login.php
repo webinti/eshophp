@@ -31,7 +31,13 @@ if (is_post()) {
 <div class="w-screen h-screen flex justify-center items-start bg-gray-200">
 
     <div class="bg-white shadow-lg p-8 mt-20">
+        <div class="flex flex-row items-center">
+            <img src="../img/icone.png" width="100" class="text-center">
+            <h2 class="text-gray-700 text-2xl">Agence webinti</h2>
+        </div>
+
         <h1 class="text-xl mb-4">Connectez-vous à l'administration</h1>
+
         <form method="post">
             <?php if (isset($previous_errors['credentials'])): ?>
                 <p class="border border-red-100 w-full bg-red-200 text-red-900 mb-4 p-2 text-sm">

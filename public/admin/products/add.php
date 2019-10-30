@@ -2,6 +2,19 @@
 require_once (__DIR__ . '/../../../bootstrap.php');
 redirect_unless_admin();
 
+if (is_post()) {
+
+    if (empty($_POST['title'])) {
+        $_SESSION['previous_errors']['credentials'] = "Le titre est requis";
+    }
+    if (empty($_POST['description'])) {
+        $_SESSION['previous_errors']['credentials'] = "La description est requise";
+    }
+    if (!empty($_SESSION['previous_errors'])) {
+        redirect('/admin/products/add.php');
+    }
+}
+
 partial('header_admin', ['title' => 'Ajouter un produit'])
 ?>
 
